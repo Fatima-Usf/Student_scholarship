@@ -32,7 +32,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
+                  <Pane accessibleRole="PASSWORD_FIELD" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <JFXButton fx:id="checkdb" buttonType="RAISED" cache="true" layoutX="195.0" layoutY="218.0" onAction="#statusDB" prefHeight="26.0" prefWidth="123.0" ripplerFill="#f502b0" style="-fx-background-color: #F6BDEA;" text="Check DB" textFill="#a10174">
                            <cursor>
@@ -45,8 +45,8 @@
                   <Pane prefHeight="392.0" prefWidth="260.0" GridPane.columnIndex="1">
                      <children>
                         <JFXTextField fx:id="user" focusColor="#cb91c0" labelFloat="true" layoutX="21.0" layoutY="119.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Username" unFocusColor="#dd1fa7" />
-                        <JFXTextField fx:id="pass" focusColor="#cb91c0" labelFloat="true" layoutX="21.0" layoutY="196.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Password" unFocusColor="#dd1fa7" />
-                        <JFXButton fx:id="submit" buttonType="RAISED" layoutX="88.0" layoutY="292.0" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #F6BDEA;" text="Submit" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                        <JFXTextField fx:id="pass" accessibleRole="PASSWORD_FIELD" focusColor="#cb91c0" labelFloat="true" layoutX="21.0" layoutY="196.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Password" unFocusColor="#dd1fa7" />
+                        <JFXButton fx:id="submit" buttonType="RAISED" layoutX="88.0" layoutY="292.0" onAction="#login" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #F6BDEA;" text="Submit" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                            <cursor>
                               <Cursor fx:constant="MOVE" />
                            </cursor></JFXButton>
@@ -55,6 +55,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
+                        <Label fx:id="succed" contentDisplay="RIGHT" layoutX="85.0" layoutY="345.0" opacity="0.66" prefHeight="32.0" prefWidth="117.0" textFill="#a10174" />
                      </children>
                   </Pane>
                </children>

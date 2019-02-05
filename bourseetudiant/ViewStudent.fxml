@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.ViewStudentController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TableView fx:id="table" editable="true" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="numEtudiant" prefWidth="71.0" text="N° Etudiant" />
+                <TableColumn fx:id="nom" prefWidth="188.0" text="Nom" />
+                  <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom" />
+                  <TableColumn fx:id="NumCCP" prefWidth="75.0" text="N° CCP" />
+                  <TableColumn fx:id="dateNaissance" prefWidth="75.0" text="Date Naissance" />
+                  <TableColumn fx:id="NumFiliere" prefWidth="75.0" style="-fx-background-color: ;" text="N° Filiere" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

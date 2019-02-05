@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #E7E7E7;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.Win2Controller">
+   <children>
+      <Pane prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #FCF6E7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="vs" buttonType="RAISED" layoutX="135.0" layoutY="109.0" onAction="#viewStudent" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="View students" textFill="#94076e">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="up" buttonType="RAISED" layoutX="135.0" layoutY="184.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Update " textFill="#8d0468">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="insert" buttonType="RAISED" layoutX="135.0" layoutY="260.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Insert a new student" textFill="#8d0468" textOverrun="CLIP">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <Label layoutX="120.0" layoutY="36.0" text="Student bourse adminstration" textFill="#8d0468">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="240.0" layoutY="66.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
+            <ImageView fitHeight="441.0" fitWidth="469.0" layoutX="467.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@s.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="-8.0" layoutY="331.0" prefHeight="62.0" prefWidth="475.0" style="-fx-background-color: #B4C5D6;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
