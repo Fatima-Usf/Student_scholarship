@@ -21,7 +21,7 @@
                <font>
                   <Font size="14.0" />
                </font></JFXButton>
-            <JFXButton fx:id="insert" buttonType="RAISED" layoutX="135.0" layoutY="260.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Insert a new student" textFill="#8d0468" textOverrun="CLIP">
+            <JFXButton fx:id="insert" buttonType="RAISED" layoutX="135.0" layoutY="260.0" onAction="#insertStudent" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Insert a new student" textFill="#8d0468" textOverrun="CLIP">
                <font>
                   <Font size="14.0" />
                </font></JFXButton>

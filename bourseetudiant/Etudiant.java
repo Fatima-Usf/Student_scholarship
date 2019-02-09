@@ -14,6 +14,7 @@ public class Etudiant {
       + "   NumEtudiant INT PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(20), prenom VARCHAR(20), "
       + "   dataNaissance VARCHAR(20), NumCCP INT, FOREING KEY (NumFiliere) REFERENCES Filiere(NumFiliere)"; */
     
+    
     private int NumEtudiant;
     private String nom;
     private String prenom;

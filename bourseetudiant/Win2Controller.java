@@ -45,6 +45,21 @@ public class Win2Controller implements Initializable {
             stage.show();
 
     }
+    
+    
+    @FXML
+    void insertStudent(ActionEvent event) throws IOException {
+        
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
