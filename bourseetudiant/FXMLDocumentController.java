@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -78,7 +79,9 @@ public class FXMLDocumentController implements Initializable {
             if(val.equals(pass.getText())){
             succed.setText(" Success  !!");
             AdminDB.getConnection();
+            
             Stage stage = new Stage();
+            stage.close();
             Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
             Scene scene = new Scene(root);
         

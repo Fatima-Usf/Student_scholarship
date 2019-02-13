@@ -5,6 +5,7 @@
  */
 package bourseetudiant;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,11 +15,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -80,5 +87,71 @@ public class ViewStudentController implements Initializable {
         table.setItems(data);
     }    
     
+          @FXML
+    void insertStudent(ActionEvent event) throws IOException, Exception {
+ 
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            
+      
+
+    }
+    
+    
+    
+    
+       //delet
+    
+         @FXML
+    void DeleteStudent(ActionEvent event) throws Exception {
+     
+        int idEtudiant =table.getSelectionModel().getSelectedItem().getNumEtudiant();
+      //  DbEtudiant.delete(idEtudiant);
+        int status = DbEtudiant.delete(idEtudiant);
+     if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
+        
+
+    }
+    
+           @FXML
+    void EditeStudent(ActionEvent event) throws IOException {
+     
+    
+            EditeController.id= table.getSelectionModel().getSelectedItem().getNumEtudiant();
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("Edite.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            
+
+    }
+    
+
+ 
+   
+   
+    
+  
+    
+    @FXML
+    void back(ActionEvent event) throws IOException {
+        ((Node)event.getSource()).getScene().getWindow().hide();
+        Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+    }
+   
     
 }

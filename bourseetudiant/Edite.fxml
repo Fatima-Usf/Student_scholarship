@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="405.0" prefWidth="747.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.EditeController">
+   <children>
+      <Pane layoutX="248.0" prefHeight="406.0" prefWidth="500.0" style="-fx-background-color: #EDE4DC;">
+         <children>
+            <JFXButton fx:id="update" buttonType="RAISED" layoutX="302.0" layoutY="324.0" onAction="#UpdateStudent" prefHeight="41.0" prefWidth="161.0" style="-fx-background-color: #F6BDEA;" text="Save modification" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor>
+            </JFXButton>
+         </children></Pane>
+      <JFXTextField fx:id="nom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="88.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="311.0" promptText="Nom" unFocusColor="#a10174" />
+      <JFXTextField fx:id="prenom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="148.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Prenom" unFocusColor="#c91396" />
+      <JFXTextField fx:id="NumCCP" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="211.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° CCP" unFocusColor="#c91396" />
+      <JFXTextField fx:id="dateNaissaince" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="270.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date naissance " unFocusColor="#c91396" />
+      <JFXTextField fx:id="NumFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="260.0" layoutY="336.0" maxWidth="217.0" minWidth="217.0" prefHeight="32.0" prefWidth="217.0" promptText="N° Filiere" unFocusColor="#c91396" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="405.0" layoutX="218.0" stroke="#dc99c7" strokeType="INSIDE" width="17.0" />
+      <Pane layoutY="1.0" prefHeight="405.0" prefWidth="232.0" style="-fx-background-color: #BAC8D6;">
+         <children>
+            <ImageView fitHeight="356.0" fitWidth="328.0" layoutX="-96.0" layoutY="-7.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@s.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="41.0" layoutX="29.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@3847915-24.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton layoutX="29.0" layoutY="349.0" onAction="#back" prefHeight="25.0" prefWidth="25.0" text=" ">
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label layoutX="408.0" layoutY="31.0" text="Edite student" textFill="#8d0468">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="474.0" layoutY="61.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
+   </children>
+</AnchorPane>
