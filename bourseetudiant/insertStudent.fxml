@@ -17,17 +17,17 @@
       <JFXTextField fx:id="NumCCP" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="226.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° CCP" unFocusColor="#c91396" />
       <JFXTextField fx:id="dateNaissaince" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="285.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date naissance " unFocusColor="#c91396" />
       <JFXTextField fx:id="NumFiliere" focusColor="#cb91c0" labelFloat="true" layoutX="107.0" layoutY="351.0" maxWidth="217.0" minWidth="217.0" prefHeight="32.0" prefWidth="217.0" promptText="N° Filiere" unFocusColor="#c91396" />
-      <JFXButton fx:id="add" buttonType="RAISED" layoutX="490.0" layoutY="279.0" onAction="#insertStudent" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #F6BDEA;" text="Add a new student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <ImageView fitHeight="486.0" fitWidth="439.0" layoutX="417.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@students.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="add" buttonType="RAISED" layoutX="533.0" layoutY="276.0" onAction="#insertStudent" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="+ Add a new student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
       </JFXButton>
-      <ImageView fitHeight="177.0" fitWidth="224.0" layoutX="486.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Female-user-add-icon.png" />
-         </image>
-      </ImageView>
-      <JFXButton fx:id="view" buttonType="RAISED" layoutX="491.0" layoutY="341.0" onAction="#ViewStudent" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #F6BDEA;" text="Views student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <JFXButton fx:id="view" buttonType="RAISED" layoutX="533.0" layoutY="331.0" onAction="#ViewStudent" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="Views student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>

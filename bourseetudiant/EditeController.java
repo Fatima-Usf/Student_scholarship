@@ -108,7 +108,7 @@ public class EditeController implements Initializable {
     void back(ActionEvent event) throws IOException {
         ((Node)event.getSource()).getScene().getWindow().hide();
         Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("ViewStudent.fxml"));
             Scene scene = new Scene(root);
         
             stage.setScene(scene);

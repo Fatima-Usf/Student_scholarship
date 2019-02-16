@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -58,6 +59,7 @@ public class ViewStudentController implements Initializable {
     private TableColumn<Etudiant, Integer> NumFiliere;
     
     public ObservableList<Etudiant> data = FXCollections.observableArrayList();
+    private InvalidationListener listener;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -109,13 +111,14 @@ public class ViewStudentController implements Initializable {
     
          @FXML
     void DeleteStudent(ActionEvent event) throws Exception {
-     
+     Etudiant etudiant= new Etudiant();
         int idEtudiant =table.getSelectionModel().getSelectedItem().getNumEtudiant();
       //  DbEtudiant.delete(idEtudiant);
         int status = DbEtudiant.delete(idEtudiant);
      if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
-        
-
+      //  table.setItems(data);
+      refreshTable();
+      
     }
     
            @FXML
@@ -130,12 +133,39 @@ public class ViewStudentController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+           
             
 
     }
     
 
- 
+    public void refreshTable(){
+    data.clear();
+
+        try{
+        String sql= "SELECT * FROM `Etudiant` WHERE 1";
+        Connection con =DbEtudiant.getConnection();
+        PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+        ResultSet result =stm.executeQuery();
+        
+        while(result.next()){
+        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6)));
+        }
+        con.close();
+        
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        numEtudiant.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("numEtudiant"));
+        nom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("prenom"));
+        NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
+        dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
+        NumFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumFiliere"));
+        
+        table.setItems(data);    
+    }
    
    
     
