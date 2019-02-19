@@ -63,6 +63,20 @@ public class Win2Controller implements Initializable {
 
     }*/
 
+    
+    
+    @FXML
+    void viewBourse(ActionEvent event)throws IOException  {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("ViewsBourses.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

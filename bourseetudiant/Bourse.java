@@ -13,18 +13,18 @@ public class Bourse {
     
     private int anneUniv;
     private int terme;
-    private int NumEtudiant;
-    private int MontantTerme;
+    private int numEtudiant;
+    private int montant;
     
     public Bourse(){
     super();
     }
 
-    public Bourse(int anneUniv, int terme, int NumEtudiant, int MontantTerme) {
+    public Bourse(int anneUniv, int terme, int numEtudiant, int montant) {
         this.anneUniv = anneUniv;
         this.terme = terme;
-        this.NumEtudiant = NumEtudiant;
-        this.MontantTerme = MontantTerme;
+        this.numEtudiant = numEtudiant;
+        this.montant = montant;
     }
 
     public int getAnneUniv() {
@@ -36,11 +36,11 @@ public class Bourse {
     }
 
     public int getNumEtudiant() {
-        return NumEtudiant;
+        return numEtudiant;
     }
 
-    public int getMontantTerme() {
-        return MontantTerme;
+    public int getMontant() {
+        return montant;
     }
 
     public void setAnneUniv(int anneUniv) {
@@ -51,15 +51,14 @@ public class Bourse {
         this.terme = terme;
     }
 
-    public void setNumEtudiant(int NumEtudiant) {
-        this.NumEtudiant = NumEtudiant;
+    public void setNumEtudiant(int numEtudiant) {
+        this.numEtudiant = numEtudiant;
     }
 
-    public void setMontantTerme(int MontantTerme) {
-        this.MontantTerme = MontantTerme;
+    public void setMontant(int montant) {
+        this.montant = montant;
     }
-    
-    
+
     
   
 

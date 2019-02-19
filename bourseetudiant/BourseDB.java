@@ -9,7 +9,10 @@ import static bourseetudiant.AdminDB.con;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -48,7 +51,7 @@ public class BourseDB {
           stm.setInt(1, bourse.getAnneUniv());
           stm.setInt(2, bourse.getTerme());
           stm.setInt(3, bourse.getNumEtudiant());
-          stm.setInt(4, bourse.getMontantTerme());
+          stm.setInt(4, bourse.getMontant());
           
           s=stm.executeUpdate();
           
@@ -59,12 +62,12 @@ public class BourseDB {
       return s;
   }
     
-    //delete bourse 
+    //delete bourse by Anne
     
     public static int deleteBourse(int id) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "DELETE FROM `bourse`.`bourse` WHERE `AnneeUniv`='?' and`NumEtudiant`='?' and`terme`='?'";
+          String sql = "DELETE FROM `bourse`.`bourse` WHERE `AnneeUniv`='?'";
           Connection con = DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
@@ -76,5 +79,43 @@ public class BourseDB {
   }
     
     
+    //delete bourse by student
+    
+    public static int deleteBourseStudent(int id) throws SQLException, Exception{
+     int s=0;
+      try{
+          String sql = "DELETE FROM `bourse`.`bourse` WHERE `NumEtudiant`='?'";
+          Connection con = DbEtudiant.getConnection();
+          PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+          stm.setInt(1, id);
+          s=stm.executeUpdate();
+          con.close();
+      }catch(SQLException e){
+      e.printStackTrace();
+      }return s;
+  }
+    
+    public static List<Bourse> getbourse() throws Exception{
+    List<Bourse> list = new ArrayList<Bourse>();
+    try{
+         String sql= "SELECT * FROM `bourse` WHERE 1";
+         Connection con = DbEtudiant.getConnection();
+         PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+         ResultSet result =stm.executeQuery();
+    
+         while(result.next()){
+         Bourse etudiant = new Bourse();
+         etudiant.setAnneUniv(1);
+         etudiant.setTerme(2);
+         etudiant.setNumEtudiant(result.getInt(3));
+         etudiant.setMontant(4);
+         list.add(etudiant);
+         }
+         con.close();
+    }catch(SQLException e){
+    e.printStackTrace();}
+    return list;
+    }
+  
     
 }
