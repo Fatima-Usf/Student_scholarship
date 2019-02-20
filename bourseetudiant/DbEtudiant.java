@@ -160,6 +160,9 @@ private static final String STUDENT = "CREATE TABLE `bourse`.`Etudiant` (\n" +
       }return etudiant;
   }
     
+    
+    
+    
     public static List<Etudiant> getEtudiant() throws Exception{
     List<Etudiant> list = new ArrayList<Etudiant>();
     try{

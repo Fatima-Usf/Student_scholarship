@@ -17,7 +17,7 @@
                <font>
                   <Font size="14.0" />
                </font></JFXButton>
-            <JFXButton fx:id="up" buttonType="RAISED" layoutX="135.0" layoutY="184.0" onAction="#viewBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="View bourses" textFill="#8d0468">
+            <JFXButton fx:id="up" buttonType="RAISED" layoutX="135.0" layoutY="184.0" onAction="#viewBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="View scolarships" textFill="#8d0468">
                <font>
                   <Font size="14.0" />
                </font></JFXButton>

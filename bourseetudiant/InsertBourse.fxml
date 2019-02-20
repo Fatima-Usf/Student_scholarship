@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertBourseController">
+   <children>
+      <JFXTextField fx:id="anneUniv" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="130.0" maxWidth="224.0" minWidth="224.0" pickOnBounds="false" prefHeight="32.0" prefWidth="352.0" promptText="Année Universitaire" unFocusColor="#c91396" />
+      <JFXTextField fx:id="terme" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="190.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Terme" unFocusColor="#c91396" />
+      <JFXTextField fx:id="NumEtudiant" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="253.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N°Etudiant" unFocusColor="#c91396" />
+      <JFXTextField fx:id="montant" focusColor="#cb91c0" labelFloat="true" layoutX="104.0" layoutY="312.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Montant" unFocusColor="#c91396" />
+      <ImageView fitHeight="486.0" fitWidth="439.0" layoutX="417.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@students.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="add" buttonType="RAISED" layoutX="533.0" layoutY="276.0" onAction="#insertBourse" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="+ Add a new scolarship" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="view" buttonType="RAISED" layoutX="533.0" layoutY="331.0" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="Views scolarships" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="283.0" layoutY="29.0" text="Scolarship Adjunction" textFill="#8d0468">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="388.0" layoutY="62.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
+   </children>
+</AnchorPane>

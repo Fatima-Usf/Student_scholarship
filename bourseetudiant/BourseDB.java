@@ -45,7 +45,8 @@ public class BourseDB {
       int s =0;
       
       try{
-          String sql =" INSERT INTO `bourse`.`bourse` (`anneUniv`, `terme`, `NumEtudiant`, `MontantTerme`) VALUES (?,?,?,?)";
+          //" INSERT INTO `bourse`.`Etudiant` (`nom`, `prenom`, `NumCCP`, `dateNaissance`, `Numfiliere`) VALUES (?,?,?,?,?)";
+          String sql =" INSERT INTO `bourse`.`bourse` (`AnneeUniv`, `terme`, `NumEtudiant`, `MontantTerme`) VALUES (?,?,?,?)";
           Connection con =DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, bourse.getAnneUniv());
@@ -67,7 +68,7 @@ public class BourseDB {
     public static int deleteBourse(int id) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "DELETE FROM `bourse`.`bourse` WHERE `AnneeUniv`='?'";
+          String sql = "DELETE FROM `bourse`.`bourse` WHERE `AnneeUniv`=?";
           Connection con = DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
@@ -99,7 +100,7 @@ public class BourseDB {
     List<Bourse> list = new ArrayList<Bourse>();
     try{
          String sql= "SELECT * FROM `bourse` WHERE 1";
-         Connection con = DbEtudiant.getConnection();
+         Connection con =BourseDB.getConnection();
          PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
          ResultSet result =stm.executeQuery();
     
@@ -118,4 +119,78 @@ public class BourseDB {
     }
   
     
+      //Search 
+  
+    public static Bourse SearchEtudiantAnne(int id) throws SQLException, Exception{
+     Bourse etudiant = new Bourse();
+      try{
+          String sql = "SELECT * FROM bourse WHERE `AnneeUniv`=?";
+          Connection con = BourseDB.getConnection();
+          PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+          stm.setInt(1, id);
+          ResultSet result =stm.executeQuery();
+          
+          if(result.next()){
+          
+              etudiant.setAnneUniv(result.getInt(1));
+              etudiant.setTerme(result.getInt(2));
+              etudiant.setNumEtudiant(result.getInt(3));
+              etudiant.setMontant(result.getInt(4));
+          }
+          
+          con.close();
+      }catch(SQLException e){
+      e.printStackTrace();
+      }return etudiant;
+  }
+    
+    
+    
+    
+    //update 
+    // requette 
+  /*  UPDATE bourse SET `AnneeUniv`=?, `terme`=?, `NumEtudiant`=?, `MontantTerme`=? WHERE `AnneeUniv`=? ;
+    */
+    public static int updateBourse(Bourse bourse) throws SQLException, Exception{
+     int s=0;
+      try{
+          String sql = "UPDATE `bourse`.`bourse` SET `terme`=?, `NumEtudiant`=?, `MontantTerme`=? WHERE `AnneeUniv`=?";
+          Connection con =BourseDB.getConnection();
+          PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+          
+          
+          stm.setInt(1, bourse.getTerme());
+          stm.setInt(2, bourse.getNumEtudiant());
+          stm.setInt(3, bourse.getMontant());
+          stm.setInt(4, bourse.getAnneUniv());
+          s=stm.executeUpdate();
+          con.close();
+      }catch(SQLException e){
+      e.printStackTrace();
+      }return s;
+  }
+   
+    
+      public static int update(Etudiant etudiant) throws SQLException, Exception{
+     int s=0;
+      try{
+          String sql = "UPDATE `bourse`.`Etudiant` SET `nom`=?, `prenom`=?, `NumCCP`=?, `dateNaissance`=?, `Numfiliere`=? WHERE `NumEtudiant`=?";
+          Connection con = DbEtudiant.getConnection();
+          PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
+          
+          stm.setString(1, etudiant.getNom());
+          stm.setString(2, etudiant.getPrenom());
+          stm.setInt(3, etudiant.getNumCCP());
+          stm.setString(4, etudiant.getDateNaissance());
+          stm.setInt(5, etudiant.getNumFiliere());
+          stm.setInt(6, etudiant.getNumEtudiant());
+          s=stm.executeUpdate();
+          
+          con.close();
+      }catch(SQLException e){
+      e.printStackTrace();
+      }return s;
+  }
+      
+      
 }
