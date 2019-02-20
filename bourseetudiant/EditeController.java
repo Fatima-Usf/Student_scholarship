@@ -94,13 +94,7 @@ public class EditeController implements Initializable {
            if (status>0){System.out.println("uppdate succeful");}else{System.out.println(" update failed");}
            //close the previous windows
            ((Node)event.getSource()).getScene().getWindow().hide();
-            Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("ViewStudent.fxml"));
-            Scene scene = new Scene(root);
-        
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+          
     }
 
     @FXML

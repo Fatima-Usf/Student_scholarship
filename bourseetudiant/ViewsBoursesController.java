@@ -108,6 +108,7 @@ public class ViewsBoursesController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            refreshTable();
             
 
     }
@@ -133,10 +134,11 @@ public class ViewsBoursesController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            refreshTable();
         
     }
     
-    public  void refreshTable(){
+    public void refreshTable(){
     data.clear();
      try{
         String sql= "SELECT * FROM `bourse` WHERE 1";

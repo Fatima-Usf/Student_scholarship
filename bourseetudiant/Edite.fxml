@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <JFXButton layoutX="29.0" layoutY="349.0" onAction="" prefHeight="25.0" prefWidth="25.0" text=" ">
+            <JFXButton layoutX="29.0" layoutY="349.0" onAction="#back" prefHeight="25.0" prefWidth="25.0" text=" ">
                <cursor>
                   <Cursor fx:constant="MOVE" />
                </cursor>

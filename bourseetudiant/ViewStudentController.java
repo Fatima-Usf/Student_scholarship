@@ -137,7 +137,7 @@ public class ViewStudentController implements Initializable {
             
 
     }
-    
+    @FXML
 
     public void refreshTable(){
     data.clear();

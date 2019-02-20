@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -35,8 +36,7 @@
                   <Cursor fx:constant="MOVE" />
                </cursor>
             </JFXButton>
-            <JFXTextField fx:id="nom1" focusColor="#cb91c0" labelFloat="true" layoutX="67.0" layoutY="41.0" maxWidth="224.0" minWidth="144.0" prefHeight="32.0" prefWidth="200.0" promptText="Nom" unFocusColor="#c91396" />
-            <JFXButton fx:id="vs" buttonType="RAISED" layoutX="61.0" layoutY="118.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Speed search" textFill="#94076e">
+            <JFXButton fx:id="vs" buttonType="RAISED" layoutX="61.0" layoutY="118.0" onAction="#refreshTable" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Refresh" textFill="#94076e">
                <font>
                   <Font size="14.0" />
                </font>
@@ -56,6 +56,12 @@
                   <Font size="14.0" />
                </font>
             </JFXButton>
+            <Label layoutX="53.0" layoutY="53.0" text="Student Adminstration" textFill="#8d0468">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="167.0" layoutY="88.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
          </children>
       </Pane>
       <AnchorPane layoutX="331.0" layoutY="-1.0" prefHeight="438.0" prefWidth="655.0">

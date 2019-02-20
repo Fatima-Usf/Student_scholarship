@@ -54,7 +54,7 @@ public class EditeBourseController implements Initializable {
         try {
         bourse = BourseDB.SearchEtudiantAnne(id);
         
-        anneUniv.setText(String.valueOf(bourse.getAnneUniv()));
+//        anneUniv.setText(String.valueOf(bourse.getAnneUniv()));
         terme.setText(String.valueOf(bourse.getTerme()));
         NumEtudiant.setText(String.valueOf(bourse.getNumEtudiant()));
         montant.setText(String.valueOf(bourse.getMontant()));
@@ -82,14 +82,15 @@ public class EditeBourseController implements Initializable {
            if (status>0){System.out.println("uppdate succeful");}else{System.out.println(" update failed");}
            //close the previous windows
            ((Node)event.getSource()).getScene().getWindow().hide();
-            Stage stage = new Stage();
+            /*Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("ViewsBourses.fxml"));
             Scene scene = new Scene(root);
         
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
-            
+            */
+          
  
 
 }
