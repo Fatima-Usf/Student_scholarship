@@ -49,19 +49,18 @@ public class Win2Controller implements Initializable {
     }
     
     
-    /*@FXML
-    void insertStudent(ActionEvent event) throws IOException {
-        //exit the previous window
-            ((Node)event.getSource()).getScene().getWindow().hide();
+    @FXML
+    void ViewFiliere(ActionEvent event) throws IOException {
+        
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("viewsFiliere.fxml"));
             Scene scene = new Scene(root);
         
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
 
-    }*/
+    }
 
     
     

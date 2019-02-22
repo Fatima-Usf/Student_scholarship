@@ -25,6 +25,16 @@ public class Filiere {
         this.NbrAnne = NbrAnne;
     }
 
+    public Filiere(String nomFiliere) {
+        this.nomFiliere = nomFiliere;
+    }
+
+    public Filiere(int NumFiliere, String nomFiliere) {
+        this.NumFiliere = NumFiliere;
+        this.nomFiliere = nomFiliere;
+    }
+    
+    
    
     
     

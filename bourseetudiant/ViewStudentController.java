@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -95,7 +96,7 @@ public class ViewStudentController implements Initializable {
             Stage stage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
             Scene scene = new Scene(root);
-        
+        //    ComboBox comobox = new ComboBox();
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
