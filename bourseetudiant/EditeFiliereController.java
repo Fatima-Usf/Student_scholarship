@@ -30,6 +30,8 @@ public class EditeFiliereController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    static int idFiliere ;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

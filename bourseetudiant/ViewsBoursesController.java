@@ -116,7 +116,7 @@ public class ViewsBoursesController implements Initializable {
     @FXML
     private void DeleteBourse(ActionEvent event)throws Exception {
      Bourse bourse = new Bourse();
-     int anneBourse = table.getSelectionModel().getSelectedItem().getAnneUniv();
+     int anneBourse = table.getSelectionModel().getSelectedItem().getTerme();
 
         int status = BourseDB.deleteBourse(anneBourse);
      if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
