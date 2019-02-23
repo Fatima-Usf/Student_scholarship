@@ -5,7 +5,7 @@
  */
 package bourseetudiant;
 
-import static bourseetudiant.EditeBourseController.id;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;

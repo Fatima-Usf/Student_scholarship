@@ -99,7 +99,9 @@ public class ViewsBoursesController implements Initializable {
     private void Edite(ActionEvent event)  throws IOException {
      
            
-            EditeBourseController.id= table.getSelectionModel().getSelectedItem().getAnneUniv();
+            EditeBourseController.idbourse= table.getSelectionModel().getSelectedItem().getAnneUniv();
+            EditeBourseController.term=table.getSelectionModel().getSelectedItem().getTerme();
+            EditeBourseController.numEtud=table.getSelectionModel().getSelectedItem().getNumEtudiant();
             Stage stage = new Stage();
             Parent root;
             root = FXMLLoader.load(getClass().getResource("EditeBourse.fxml"));
@@ -116,9 +118,11 @@ public class ViewsBoursesController implements Initializable {
     @FXML
     private void DeleteBourse(ActionEvent event)throws Exception {
      Bourse bourse = new Bourse();
-     int anneBourse = table.getSelectionModel().getSelectedItem().getTerme();
+     int anneBourse = table.getSelectionModel().getSelectedItem().getAnneUniv();
+     int trm = table.getSelectionModel().getSelectedItem().getTerme();
+     int numE = table.getSelectionModel().getSelectedItem().getNumEtudiant();
 
-        int status = BourseDB.deleteBourse(anneBourse);
+        int status = BourseDB.deleteBourse(anneBourse, trm, numE);
      if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
     
      refreshTable();
@@ -161,6 +165,20 @@ public class ViewsBoursesController implements Initializable {
         montant.setCellValueFactory(new PropertyValueFactory<Bourse, Integer> ("montant"));
         table.setItems(data);
     
+    }
+    
+      @FXML
+        void search(ActionEvent event) throws IOException {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("SpeedSearchBourse.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            refreshTable();
+        
+
     }
     
 }

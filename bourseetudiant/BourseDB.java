@@ -6,6 +6,7 @@
 package bourseetudiant;
 
 import static bourseetudiant.AdminDB.con;
+import static java.lang.String.valueOf;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -63,15 +64,17 @@ public class BourseDB {
       return s;
   }
     
-    //delete bourse by Anne
+    //delete bourse by term
     
-    public static int deleteBourse(int id) throws SQLException, Exception{
+    public static int deleteBourse(int id, int t, int n) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "DELETE FROM `bourse`.`bourse` WHERE `terme`=?";
+          String sql = "DELETE FROM `bourse`.`bourse` WHERE `AnneeUniv`=? AND `terme`=? AND`NumEtudiant`=?";
           Connection con = DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
+          stm.setInt(2, t);
+          stm.setInt(3, n);
           s=stm.executeUpdate();
           con.close();
       }catch(SQLException e){
@@ -85,7 +88,7 @@ public class BourseDB {
     public static int deleteBourseStudent(int id) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "DELETE FROM `bourse`.`bourse` WHERE `NumEtudiant`='?'";
+          String sql = "DELETE FROM `bourse`.`bourse` WHERE `NumEtudiant`=?";
           Connection con = DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
@@ -121,13 +124,15 @@ public class BourseDB {
     
       //Search 
   
-    public static Bourse SearchEtudiantAnne(int id) throws SQLException, Exception{
+    public static Bourse SearchEtudiantAnne(int id, int terme, int nEtudiant) throws SQLException, Exception{
      Bourse etudiant = new Bourse();
       try{
-          String sql = "SELECT * FROM bourse WHERE `AnneeUniv`=?";
+          String sql = "SELECT * FROM bourse WHERE `AnneeUniv`=? AND `terme`=? AND `NumEtudiant`=?";
           Connection con = BourseDB.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
+          stm.setInt(2, terme);
+          stm.setInt(3, nEtudiant);
           ResultSet result =stm.executeQuery();
           
           if(result.next()){
@@ -154,15 +159,17 @@ public class BourseDB {
     public static int updateBourse(Bourse bourse) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "UPDATE `bourse`.`bourse` SET `AnneeUniv`=?, `NumEtudiant`=?, `MontantTerme`=? WHERE  `terme`=?";
+          String sql = "UPDATE bourse SET `AnneeUniv`=?, `MontantTerme`=? WHERE  `terme`=? AND `NumEtudiant`=?";
           Connection con =BourseDB.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           
           
           stm.setInt(1, bourse.getAnneUniv());
-          stm.setInt(2, bourse.getNumEtudiant());
-          stm.setInt(3, bourse.getMontant());
-          stm.setInt(4, bourse.getTerme());
+          stm.setInt(2, bourse.getMontant());
+          stm.setInt(3, bourse.getTerme());
+          stm.setInt(4, bourse.getNumEtudiant());
+          
+          
           s=stm.executeUpdate();
           con.close();
       }catch(SQLException e){
@@ -170,7 +177,7 @@ public class BourseDB {
       }return s;
   }
    
-    
+    /*
       public static int update(Etudiant etudiant) throws SQLException, Exception{
      int s=0;
       try{
@@ -190,7 +197,7 @@ public class BourseDB {
       }catch(SQLException e){
       e.printStackTrace();
       }return s;
-  }
+  }*/
       
       
 }

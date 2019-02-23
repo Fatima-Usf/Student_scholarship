@@ -27,6 +27,13 @@ public class Bourse {
         this.montant = montant;
     }
 
+    public Bourse(int terme, int montant) {
+        this.terme = terme;
+        this.montant = montant;
+    }
+    
+    
+
     public int getAnneUniv() {
         return anneUniv;
     }

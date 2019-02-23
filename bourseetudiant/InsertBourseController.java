@@ -63,10 +63,10 @@ public class InsertBourseController implements Initializable {
     
         int status = BourseDB.insertBourse(bourse);
     
-        anneUniv.setText(" ");
-        terme.setText(" ");
-        NumEtudiant.setText(" ");
-        montant.setText(" ");
+        anneUniv.setText("");
+        terme.setText("");
+        NumEtudiant.setText("");
+        montant.setText("");
 
    
     

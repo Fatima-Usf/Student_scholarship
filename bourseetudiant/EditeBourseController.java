@@ -6,7 +6,6 @@
 package bourseetudiant;
 
 
-import static bourseetudiant.EditeController.id;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
@@ -30,7 +29,9 @@ import javafx.stage.Stage;
  */
 public class EditeBourseController implements Initializable {
 
-    public static int id;
+    public static int idbourse;
+    public static int term;
+    public static int numEtud;
     @FXML
     private JFXTextField anneUniv;
     @FXML
@@ -52,11 +53,11 @@ public class EditeBourseController implements Initializable {
           //get from data base
         Bourse bourse;
         try {
-        bourse = BourseDB.SearchEtudiantAnne(id);
+        bourse = BourseDB.SearchEtudiantAnne(idbourse,term,numEtud);
         
-//        anneUniv.setText(String.valueOf(bourse.getAnneUniv()));
-        terme.setText(String.valueOf(bourse.getTerme()));
-        NumEtudiant.setText(String.valueOf(bourse.getNumEtudiant()));
+        anneUniv.setText(String.valueOf(bourse.getAnneUniv()));
+    //    terme.setText(String.valueOf(bourse.getTerme()));
+    //    NumEtudiant.setText(String.valueOf(bourse.getNumEtudiant()));
         montant.setText(String.valueOf(bourse.getMontant()));
          } catch (Exception ex) {    
             Logger.getLogger(EditeBourseController.class.getName()).log(Level.SEVERE, null, ex);
@@ -67,16 +68,17 @@ public class EditeBourseController implements Initializable {
  public void Update(ActionEvent event) throws IOException, Exception  {
      
       
-       int myterme = Integer.parseInt(terme.getText());
-       int NEtudiant = Integer.parseInt(NumEtudiant.getText());
+//       int myterme = Integer.parseInt(terme.getText());
+ //      int NEtudiant = Integer.parseInt(NumEtudiant.getText());
        int mont = Integer.parseInt(montant.getText());
+       int year = Integer.parseInt(anneUniv.getText());
        
        Bourse bourse = new Bourse();
        
-       bourse.setTerme(myterme);
-       bourse.setNumEtudiant(NEtudiant);
+       bourse.setTerme(term);
+       bourse.setNumEtudiant(numEtud);
        bourse.setMontant(mont);
-       bourse.setAnneUniv(id);
+       bourse.setAnneUniv(year);
        int status = BourseDB.updateBourse(bourse);
        
            if (status>0){System.out.println("uppdate succeful");}else{System.out.println(" update failed");}
