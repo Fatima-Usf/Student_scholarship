@@ -202,7 +202,7 @@ public class InsertStudentController implements Initializable {
     prenom.setText("");
     NumCCP.setText("");
     dateNaissaince.setText("");
-    NumFiliere.setText("");
+//    NumFiliere.setText("");
     
    
     
