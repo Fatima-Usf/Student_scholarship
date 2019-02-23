@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,16 +24,14 @@ import javafx.stage.Stage;
  *
  * @author fatima
  */
-public class InsertBourseController implements Initializable {
+public class InsertFiliereController implements Initializable {
 
     @FXML
-    private JFXTextField anneUniv;
+    private JFXTextField NumFiliere;
     @FXML
-    private JFXTextField terme;
+    private JFXTextField nomFiliere;
     @FXML
-    private JFXTextField NumEtudiant;
-    @FXML
-    private JFXTextField montant;
+    private JFXTextField nbrAnne;
     @FXML
     private JFXButton add;
     @FXML
@@ -46,36 +45,30 @@ public class InsertBourseController implements Initializable {
         // TODO
     }    
 
-      @FXML
-            
-    public void insertBourse(ActionEvent e) throws IOException, Exception{
-   
-       int year = Integer.parseInt(anneUniv.getText());
-       int myterme = Integer.parseInt(terme.getText());
-       int NEtudiant = Integer.parseInt(NumEtudiant.getText());
-       int mont = Integer.parseInt(montant.getText());
-
-        Bourse bourse = new Bourse();
-        bourse.setAnneUniv(year);
-        bourse.setTerme(myterme);
-        bourse.setNumEtudiant(NEtudiant);
-        bourse.setMontant(mont);
+    @FXML
+    private void insertFiliere(ActionEvent event) throws SQLException {
+        
+        int nFiliere = Integer.valueOf(NumFiliere.getText());
+        String nomF = nomFiliere.getText();
+        int nbryear = Integer.valueOf(nbrAnne.getText());
+        
+        Filiere filiere = new Filiere();
+        
+        filiere.setNumFiliere(nFiliere);
+        filiere.setNomFiliere(nomF);
+        filiere.setNbrAnne(nbryear);
+        
+        int status = FiliereDB.insert(filiere);
+        
+        NumFiliere.setText(" ");
+        nomFiliere.setText(" ");
+        nbrAnne.setText(" ");
+    }
     
-        int status = BourseDB.insertBourse(bourse);
-    
-        anneUniv.setText(" ");
-        terme.setText(" ");
-        NumEtudiant.setText(" ");
-        montant.setText(" ");
-
-   
-    
-     }
-    
-         @FXML
+        @FXML
     void back(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("ViewsBourses.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("viewsFiliere.fxml"));
             Scene scene = new Scene(root);
         
             stage.setScene(scene);

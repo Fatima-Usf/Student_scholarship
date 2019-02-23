@@ -28,7 +28,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="405.0" layoutX="218.0" stroke="#dc99c7" strokeType="INSIDE" width="17.0" />
       <Pane layoutY="1.0" prefHeight="405.0" prefWidth="232.0" style="-fx-background-color: #BAC8D6;">
          <children>
-            <ImageView fitHeight="356.0" fitWidth="328.0" layoutX="-96.0" layoutY="2.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="356.0" fitWidth="328.0" layoutX="-96.0" layoutY="-3.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@s.jpg" />
                </image>

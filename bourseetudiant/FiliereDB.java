@@ -61,6 +61,7 @@ public class FiliereDB {
      int s=0;
       try{
           String sql = "UPDATE Filiere SET `nomFiliere`=? ,`NbrAnne`=? WHERE `NumFiliere`=?";
+            Connection con = FiliereDB.getConnection();
             PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
             
             stm.setString(1, filiere.getNomFiliere());
@@ -79,7 +80,7 @@ public class FiliereDB {
      int s=0;
       try{
           String sql = "DELETE FROM Filiere WHERE `NumFiliere`=?";
-          Connection con = DbEtudiant.getConnection();
+          Connection con = FiliereDB.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
           s=stm.executeUpdate();
@@ -95,7 +96,7 @@ public class FiliereDB {
     Filiere filiere = new Filiere();
       try{
           String sql = "SELECT * FROM Filiere WHERE `NumFiliere`=?";
-          Connection con = DbEtudiant.getConnection();
+          Connection con = FiliereDB.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
           stm.setInt(1, id);
           ResultSet result =stm.executeQuery();

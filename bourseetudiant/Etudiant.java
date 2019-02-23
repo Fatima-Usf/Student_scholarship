@@ -35,6 +35,15 @@ public class Etudiant {
         this.numFiliere = numFiliere;
     }
 
+    public Etudiant(String nom, String prenom, int numCCP, String dateNaissance) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numCCP = numCCP;
+        this.dateNaissance = dateNaissance;
+    }
+
+   
+
    
     
     

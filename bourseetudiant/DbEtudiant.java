@@ -160,7 +160,7 @@ private static final String STUDENT = "CREATE TABLE `bourse`.`Etudiant` (\n" +
       }return etudiant;
   }
     
-    
+    //select nom, prenom  from Etudiant, Filiere where Etudiant.Numfiliere = Filiere.NumFiliere   and nomFiliere ="AI";
     
     
     public static List<Etudiant> getEtudiant() throws Exception{

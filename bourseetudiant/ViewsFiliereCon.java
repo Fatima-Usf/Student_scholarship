@@ -6,6 +6,7 @@
 package bourseetudiant;
 
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +17,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -81,7 +86,17 @@ public class ViewsFiliereCon implements Initializable {
     }
 
     @FXML
-    private void Edite(ActionEvent event) {
+    private void Edite(ActionEvent event) throws IOException {
+        EditeFiliereController.idFiliere= table.getSelectionModel().getSelectedItem().getNumFiliere();
+        Stage stage = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("EditeFiliere.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            refreshTable();
     }
 
     @FXML
@@ -99,7 +114,16 @@ public class ViewsFiliereCon implements Initializable {
     }
 
     @FXML
-    private void insert(ActionEvent event) {
+    private void insert(ActionEvent event) throws IOException {
+                Stage stage = new Stage();
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("InsertFiliere.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            refreshTable();
     }
 
     @FXML

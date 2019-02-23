@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertFiliereController">
    <children>
       <JFXTextField fx:id="NumFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="163.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° Filiere" unFocusColor="#c91396" />
       <JFXTextField fx:id="nomFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="226.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Nom Filiere" unFocusColor="#c91396" />
@@ -20,7 +20,7 @@
             <Image url="@students.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="add" buttonType="RAISED" layoutX="533.0" layoutY="276.0" onAction="#insertBourse" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="+ Add a new filiere" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <JFXButton fx:id="add" buttonType="RAISED" layoutX="533.0" layoutY="276.0" onAction="#insertFiliere" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="+ Add a new filiere" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
@@ -28,7 +28,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="view" buttonType="RAISED" layoutX="533.0" layoutY="331.0" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="Views filieres" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <JFXButton fx:id="view" buttonType="RAISED" layoutX="533.0" layoutY="331.0" onAction="#back" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="Views filieres" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>

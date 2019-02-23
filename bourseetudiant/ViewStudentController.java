@@ -94,7 +94,7 @@ public class ViewStudentController implements Initializable {
     void insertStudent(ActionEvent event) throws IOException, Exception {
  
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
+             Parent root = FXMLLoader.load(getClass().getResource("insertStudent.fxml"));
             Scene scene = new Scene(root);
         //    ComboBox comobox = new ComboBox();
             stage.setScene(scene);
@@ -105,7 +105,17 @@ public class ViewStudentController implements Initializable {
 
     }
     
-    
+    @FXML
+    void search (ActionEvent event) throws Exception {
+         Stage stage = new Stage();
+           
+            Parent root = FXMLLoader.load(getClass().getResource("ViewStudentFiliere.fxml"));
+            Scene scene = new Scene(root);
+        //    ComboBox comobox = new ComboBox();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+    }
     
     
        //delet

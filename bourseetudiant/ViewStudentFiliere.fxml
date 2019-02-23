@@ -3,15 +3,18 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.ViewStudentFiliereController">
+<AnchorPane id="AnchorPane" fx:id="year" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.ViewStudentFiliereController">
    <children>
-      <JFXTextField fx:id="nomfil" focusColor="#bc0b9c" labelFloat="true" layoutX="55.0" layoutY="147.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="nomFiliere" unFocusColor="#a10174" />
-      <JFXButton fx:id="find1" buttonType="RAISED" layoutX="55.0" layoutY="229.0" onAction="#getStudentByFiliere" prefHeight="32.0" prefWidth="144.0" style="-fx-background-color: #F6BDEA;" text="Find Student filiere" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <JFXTextField fx:id="nomfil" focusColor="#bc0b9c" labelFloat="true" layoutX="48.0" layoutY="82.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Filiere name" unFocusColor="#a10174" />
+      <JFXButton fx:id="find1" buttonType="RAISED" layoutX="36.0" layoutY="126.0" onAction="#getStudentByFiliere" prefHeight="32.0" prefWidth="178.0" style="-fx-background-color: #F6BDEA;" text="Find Student by filiere" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
@@ -28,5 +31,19 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Label layoutX="50.0" layoutY="29.0" text="Speed search" textFill="#8d0468">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="123.0" layoutY="201.0" opacity="0.54" startX="-100.0" stroke="#a10174" />
+      <JFXTextField fx:id="t" focusColor="#bc0b9c" labelFloat="true" layoutX="47.0" layoutY="223.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Terme" unFocusColor="#a10174" />
+      <JFXTextField fx:id="y" focusColor="#bc0b9c" labelFloat="true" layoutX="48.0" layoutY="267.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Year univ" unFocusColor="#a10174" />
+      <JFXButton fx:id="find11" buttonType="RAISED" layoutX="33.0" layoutY="321.0" onAction="#getStudentByTerme" prefHeight="32.0" prefWidth="178.0" style="-fx-background-color: #F6BDEA;" text="Find by Year and Terme" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </JFXButton>
+      <Line endX="100.0" layoutX="125.0" layoutY="207.0" opacity="0.54" startX="-100.0" stroke="#a10174" />
    </children>
 </AnchorPane>
