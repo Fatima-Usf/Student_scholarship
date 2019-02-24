@@ -11,6 +11,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
@@ -21,6 +22,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -101,17 +104,23 @@ public class ViewsFiliereCon implements Initializable {
 
     @FXML
     private void Delete(ActionEvent event) throws Exception {
-            // Etudiant etudiant= new Etudiant();
-             Filiere filiere = new Filiere();
-      //  int idEtudiant =table.getSelectionModel().getSelectedItem().getNumEtudiant();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confimation Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure to delete? ");
+        Optional <ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK){
+            
+        Filiere filiere = new Filiere();
+    
         int idFiliere = table.getSelectionModel().getSelectedItem().getNumFiliere();
-      //  DbEtudiant.delete(idEtudiant);
+    
         int status = FiliereDB.delete(idFiliere);
-     if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
-      //  table.setItems(data);
+        if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
+      
       refreshTable();
         
-    }
+    }}
 
     @FXML
     private void insert(ActionEvent event) throws IOException {

@@ -11,6 +11,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
@@ -22,6 +23,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -117,6 +121,14 @@ public class ViewsBoursesController implements Initializable {
 
     @FXML
     private void DeleteBourse(ActionEvent event)throws Exception {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Confimation Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure to delete? ");
+        Optional <ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK){
+        
+        
      Bourse bourse = new Bourse();
      int anneBourse = table.getSelectionModel().getSelectedItem().getAnneUniv();
      int trm = table.getSelectionModel().getSelectedItem().getTerme();
@@ -127,7 +139,7 @@ public class ViewsBoursesController implements Initializable {
     
      refreshTable();
       
-    }
+    }}
 
     @FXML
     private void insertBourse(ActionEvent event) throws IOException {
