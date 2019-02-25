@@ -50,6 +50,9 @@ public class ViewStudentFiliereController implements Initializable {
 
     @FXML
     private TableColumn<Etudiant, String> dateNaissance;
+    
+    @FXML
+    private TableColumn<Etudiant, Integer> montant;
 
     
     public ObservableList<Etudiant> data = FXCollections.observableArrayList();
@@ -84,15 +87,14 @@ public class ViewStudentFiliereController implements Initializable {
             ex.printStackTrace();
         }
         
-     //   numEtudiant.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("numEtudiant"));
+     
         nom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("prenom"));
         NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
         dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
-      //  NumFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumFiliere"));
-        
+              
         table.setItems(data);
-       // nomfil.setText(" ");
+
     
     }
     
@@ -102,7 +104,7 @@ public class ViewStudentFiliereController implements Initializable {
     nomfil.setText("");
    data.clear();
     try{
-        String sql= "select nom, prenom, NumCCP, dateNaissance from Etudiant, bourse where Etudiant.NumEtudiant = bourse.NumEtudiant and terme=? and AnneeUniv=?";
+        String sql= "select nom, prenom, NumCCP, dateNaissance, MontantTerme from Etudiant, bourse where Etudiant.NumEtudiant = bourse.NumEtudiant and terme=? and AnneeUniv=?";
         Connection con =DbEtudiant.getConnection();
         PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
          stm.setInt(1,Integer.parseInt(t.getText()));
@@ -110,7 +112,7 @@ public class ViewStudentFiliereController implements Initializable {
         ResultSet result =stm.executeQuery();
         
         while(result.next()){
-        data.add(new Etudiant(result.getString(1),result.getString(2),result.getInt(3),result.getString(4)));
+        data.add(new Etudiant(result.getString(1),result.getString(2),result.getInt(3),result.getString(4), result.getInt(5)));
         }
         con.close();
         
@@ -123,6 +125,7 @@ public class ViewStudentFiliereController implements Initializable {
         prenom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("prenom"));
         NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
         dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
+        montant.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("montant"));
 
         
         table.setItems(data);

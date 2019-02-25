@@ -20,12 +20,13 @@
          </cursor>
       </JFXButton>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="413.0" layoutX="240.0" stroke="#dc99c7" strokeType="INSIDE" width="1.0" />
-      <TableView fx:id="table" layoutX="241.0" prefHeight="413.0" prefWidth="538.0">
+      <TableView fx:id="table" layoutX="241.0" prefHeight="413.0" prefWidth="538.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
           <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom" />
             <TableColumn fx:id="NumCCP" prefWidth="75.0" text="N° CCP" />
             <TableColumn fx:id="dateNaissance" prefWidth="75.0" text="date Naissance" />
+            <TableColumn fx:id="montant" prefWidth="75.0" text="Montant" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

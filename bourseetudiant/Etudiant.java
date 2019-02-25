@@ -21,11 +21,15 @@ public class Etudiant {
     private int numCCP;
     private String dateNaissance;
     private int numFiliere; 
+    private int montant;
+
+
 
     public Etudiant() {
         super();
     }
 
+    
     public Etudiant(int NumEtudiant, String nom, String prenom, int numCCP, String dateNaissance, int numFiliere) {
         this.NumEtudiant = NumEtudiant;
         this.nom = nom;
@@ -42,7 +46,13 @@ public class Etudiant {
         this.dateNaissance = dateNaissance;
     }
 
-   
+    public Etudiant(String nom, String prenom, int numCCP, String dateNaissance, int montant) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numCCP = numCCP;
+        this.dateNaissance = dateNaissance;
+        this.montant= montant;
+    }
 
    
     
@@ -96,5 +106,11 @@ public class Etudiant {
         this.numFiliere = numFiliere;
     }
     
-    
+        public void setMontant(int montant) {
+        this.montant = montant;
+    }
+
+    public int getMontant() {
+        return montant;
+    }
 }
