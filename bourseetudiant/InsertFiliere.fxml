@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -42,5 +43,6 @@
          </font>
       </Label>
       <Line endX="100.0" layoutX="388.0" layoutY="62.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
+      <Pane layoutX="558.0" layoutY="399.0" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #EBE6E1;" />
    </children>
 </AnchorPane>

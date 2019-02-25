@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -84,9 +85,19 @@ public class ViewsFiliereCon implements Initializable {
         table.setItems(data);
     }    
 
-    @FXML
-    private void back(ActionEvent event) {
+   
+        @FXML
+        private void back(ActionEvent event) throws IOException {
+            ((Node)event.getSource()).getScene().getWindow().hide();
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
+            Scene scene = new Scene(root);
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
     }
+    
 
     @FXML
     private void Edite(ActionEvent event) throws IOException {
@@ -134,6 +145,8 @@ public class ViewsFiliereCon implements Initializable {
             stage.show();
             refreshTable();
     }
+    
+   
 
     @FXML
     private void refreshTable() {
@@ -157,5 +170,7 @@ public class ViewsFiliereCon implements Initializable {
         nbrAnne.setCellValueFactory(new PropertyValueFactory<Filiere, Integer> ("NbrAnne"));
         table.setItems(data);
     }
+    
+    
     
 }
