@@ -22,10 +22,10 @@
                </cursor>
             </JFXButton>
          </children></Pane>
-      <JFXTextField fx:id="nom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="88.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="311.0" promptText="Nom" unFocusColor="#a10174" />
-      <JFXTextField fx:id="prenom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="148.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Prenom" unFocusColor="#c91396" />
+      <JFXTextField fx:id="nom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="88.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="311.0" promptText="FirstName" unFocusColor="#a10174" />
+      <JFXTextField fx:id="prenom" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="148.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="LastName" unFocusColor="#c91396" />
       <JFXTextField fx:id="NumCCP" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="211.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° CCP" unFocusColor="#c91396" />
-      <JFXTextField fx:id="dateNaissaince" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="270.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date naissance " unFocusColor="#c91396" />
+      <JFXTextField fx:id="dateNaissaince" focusColor="#bc0b9c" labelFloat="true" layoutX="257.0" layoutY="270.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date of birth" unFocusColor="#c91396" />
       <JFXTextField fx:id="NumFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="260.0" layoutY="336.0" maxWidth="217.0" minWidth="217.0" prefHeight="32.0" prefWidth="217.0" promptText="N° Filiere" unFocusColor="#c91396" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="405.0" layoutX="218.0" stroke="#dc99c7" strokeType="INSIDE" width="17.0" />
       <Pane layoutY="1.0" prefHeight="405.0" prefWidth="232.0" style="-fx-background-color: #BAC8D6;">

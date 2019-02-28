@@ -39,36 +39,8 @@ public class InsertStudentController implements Initializable {
     final ObservableList data = FXCollections.observableArrayList();
     @FXML
     private JFXComboBox<Filiere> Nfiliere;
-    /**
-     * Initializes the controller class.
-     * 
-     *     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        try{
-        String sql= "SELECT * FROM `Etudiant` WHERE 1";
-        Connection con =DbEtudiant.getConnection();
-        PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
-        ResultSet result =stm.executeQuery();
-        
-        while(result.next()){
-        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6)));
-        }
-        con.close();
-        
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        
-        numEtudiant.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("numEtudiant"));
-        nom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("nom"));
-        prenom.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("prenom"));
-        NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
-        dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
-        NumFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumFiliere"));
-        
-        table.setItems(data);
-    } 
-     */
+  
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
@@ -88,36 +60,6 @@ public class InsertStudentController implements Initializable {
             ex.printStackTrace();
         } 
         
-   
-        /*
-        Nfiliere.setConverter(new StringConverter<Filiere>() {
-
-    @Override
-    public String toString(Filiere object) {
-        return object.getNomFiliere();
-    }
-
-    @Override
-    public Filiere fromString(String string) {
-        return Nfiliere.getItems().stream().filter(ap -> 
-            ap.getNomFiliere().equals(string)).findFirst().orElse(null);
-    }
-});
-        */
-        
-       /* Nfiliere.setConverter(new StringConverter<Filiere>() {
-
-            @Override
-            public String toString(Filiere object) {
-                return object.getNomFiliere();
-            }
-
-            @Override
-            public Filiere fromString(String string) {
-                // TODO Auto-generated method stub
-                return null;
-            }
-        });*/
         Nfiliere.setItems(data);
     }
      @FXML
@@ -147,7 +89,7 @@ public class InsertStudentController implements Initializable {
                     System.out.println(filiere.getNumFiliere());
                 }else System.out.println("coucou");
             });*/
-            int filiere = Nfiliere.getSelectionModel().getSelectedIndex();
+           int filiere = Nfiliere.getSelectionModel().getSelectedIndex();
             System.out.println( filiere);
          
         /* Nfiliere.valueProperty().addListener((obs, oldval, newval) -> {
@@ -159,12 +101,12 @@ public class InsertStudentController implements Initializable {
             @Override
             public void handle(ActionEvent e) {
                 try{
-                    String sql= "SELECT * FROM Filiere where nomFiliere=? ";
+                    String sql= "SELECT numFiliere FROM Filiere where nomFiliere=? ";
                     Connection con =FiliereDB.getConnection();
                     PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
-                    stm.setInt(1, Nfiliere.getSelectionModel().getSelectedItem());
+                    stm.setInt(1, Nfiliere.getSelectionModel().getSelectedItem().getNumFiliere());
                     ResultSet result =stm.executeQuery();
-                    
+                  
                     con.close();
                 }catch (Exception ex) {
                     ex.printStackTrace();
@@ -180,9 +122,6 @@ public class InsertStudentController implements Initializable {
     String lastname = prenom.getText();
     String nCCP = NumCCP.getText();
     String naissance = dateNaissaince.getText();
-   // String nFiliere = NumFiliere.getText();
-    //int filiere = Nfiliere.getSelectionModel().getSelectedItem().getNumFiliere();
-    //to int
     int numccp1= Integer.parseInt(nCCP);
     int filiere = Nfiliere.getSelectionModel().getSelectedIndex();
    // int filiere = Integer.parseInt(nFiliere);
@@ -214,71 +153,10 @@ public class InsertStudentController implements Initializable {
     @FXML
     void ViewStudent(ActionEvent event) throws IOException {
         ((Node)event.getSource()).getScene().getWindow().hide();
-        Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("ViewStudent.fxml"));
-            Scene scene = new Scene(root);
-        
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-
-    }
-    
-
-   
-
-    /*@FXML
-    void DeleteStudent(ActionEvent event) throws Exception {
-        String myid= id.getText();
-        int idEtudiant =Integer.parseInt(myid);
-      //  DbEtudiant.delete(idEtudiant);
-        int status = DbEtudiant.delete(idEtudiant);
-     if (status>0){System.out.println("delet succeful");}else{System.out.println("delet failed");}
-        
-
-    }
-*/
-    /*@FXML
-    void UpdateStudent(ActionEvent event) throws IOException, Exception  {
-        String myid= id.getText();
-        int idEtudiant =Integer.parseInt(myid);
-        
-        String name = nom.getText();
-        String lastname = prenom.getText();
-        int nCCP = Integer.parseInt(NumCCP.getText());
-        String naissance = dateNaissaince.getText();
-        int nFiliere = Integer.parseInt(NumFiliere.getText());
       
-    
-        Etudiant etudiant = new Etudiant();
-            
-            etudiant.setNom(name);
-            etudiant.setPrenom(lastname);
-            etudiant.setNumCCP(nCCP);
-            etudiant.setDateNaissance(naissance);
-            etudiant.setNumFiliere(nFiliere);
-            etudiant.setNumEtudiant(idEtudiant);
-            int status = DbEtudiant.update(etudiant);
-           if (status>0){System.out.println("succeful");}else{System.out.println("failed");}
-    }
-*/
- 
 
-   /* @FXML
-    void getStudentById(ActionEvent event) throws Exception {
-        
-        String myid= id.getText();
-        int idEtudiant =Integer.parseInt(myid);
-        //get from data base
-        Etudiant etudiant = DbEtudiant.SearchEtudiantId(idEtudiant);
-        //modifie le contenu du gui en mettant le contenu de l'étudiant qui dans la fxt search qui provient du BD
-        nom.setText(etudiant.getNom());
-        prenom.setText(etudiant.getPrenom());
-        NumCCP.setText(String.valueOf(etudiant.getNumCCP()));
-        dateNaissaince.setText(etudiant.getDateNaissance());
-        NumFiliere.setText(String.valueOf(etudiant.getNumFiliere()));
-        
-    }*/
+    }
+    
     
     
     

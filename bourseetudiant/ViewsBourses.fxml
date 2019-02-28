@@ -36,17 +36,17 @@
                   <Cursor fx:constant="MOVE" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="vs1" buttonType="RAISED" layoutX="66.0" layoutY="155.0" onAction="#Edite" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Edite" textFill="#94076e">
+            <JFXButton fx:id="vs1" buttonType="RAISED" layoutX="66.0" layoutY="109.0" onAction="#Edite" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Edite" textFill="#94076e">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="vs2" buttonType="RAISED" layoutX="65.0" layoutY="221.0" onAction="#DeleteBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Delete" textFill="#94076e">
+            <JFXButton fx:id="vs2" buttonType="RAISED" layoutX="65.0" layoutY="175.0" onAction="#DeleteBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Delete" textFill="#94076e">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="vs3" buttonType="RAISED" layoutX="65.0" layoutY="286.0" onAction="#insertBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Insert" textFill="#94076e">
+            <JFXButton fx:id="vs3" buttonType="RAISED" layoutX="65.0" layoutY="240.0" onAction="#insertBourse" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Insert" textFill="#94076e">
                <font>
                   <Font size="14.0" />
                </font>
@@ -57,12 +57,7 @@
                </font>
             </Label>
             <Line endX="100.0" layoutX="167.0" layoutY="59.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
-            <JFXButton fx:id="vs" buttonType="RAISED" layoutX="66.0" layoutY="83.0" onAction="#refreshTable" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Refresh" textFill="#94076e">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="vs31" buttonType="RAISED" layoutX="70.0" layoutY="346.0" onAction="#search" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Speed search" textFill="#94076e">
+            <JFXButton fx:id="vs31" buttonType="RAISED" layoutX="64.0" layoutY="303.0" onAction="#search" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #F6BDEA;" text="Speed search" textFill="#94076e">
                <font>
                   <Font size="14.0" />
                </font>
@@ -73,10 +68,10 @@
          <children>
             <TableView fx:id="table" editable="true" layoutX="28.0" layoutY="-9.0" prefHeight="447.0" prefWidth="655.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-9.0">
                <columns>
-                  <TableColumn fx:id="anneUniv" minWidth="0.0" prefWidth="91.0" text="Année Universitaire" />
-                  <TableColumn fx:id="terme" prefWidth="59.0" text="Terme" />
-                  <TableColumn fx:id="NumEtudiant" minWidth="0.0" prefWidth="49.0" text="N° Etudiant" />
-                  <TableColumn fx:id="montant" minWidth="0.0" prefWidth="49.0" text="Montant" />
+                  <TableColumn fx:id="anneUniv" minWidth="0.0" prefWidth="91.0" text="University year" />
+                  <TableColumn fx:id="terme" prefWidth="59.0" text="Term" />
+                  <TableColumn fx:id="NumEtudiant" minWidth="0.0" prefWidth="49.0" text="N° Student" />
+                  <TableColumn fx:id="montant" minWidth="0.0" prefWidth="49.0" text="Amount" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

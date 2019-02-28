@@ -13,10 +13,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertBourseController">
    <children>
-      <JFXTextField fx:id="anneUniv" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="130.0" maxWidth="224.0" minWidth="224.0" pickOnBounds="false" prefHeight="32.0" prefWidth="352.0" promptText="Année Universitaire" unFocusColor="#c91396" />
-      <JFXTextField fx:id="terme" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="190.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Terme" unFocusColor="#c91396" />
-      <JFXTextField fx:id="NumEtudiant" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="253.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N°Etudiant" unFocusColor="#c91396" />
-      <JFXTextField fx:id="montant" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="312.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Montant" unFocusColor="#c91396" />
+      <JFXTextField fx:id="anneUniv" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="130.0" maxWidth="224.0" minWidth="224.0" pickOnBounds="false" prefHeight="32.0" prefWidth="352.0" promptText="Uniersity year" unFocusColor="#c91396" />
+      <JFXTextField fx:id="terme" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="190.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Term" unFocusColor="#c91396" />
+      <JFXTextField fx:id="NumEtudiant" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="253.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N°Student" unFocusColor="#c91396" />
+      <JFXTextField fx:id="montant" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="312.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Amount" unFocusColor="#c91396" />
       <ImageView fitHeight="486.0" fitWidth="439.0" layoutX="417.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@students.jpg" />

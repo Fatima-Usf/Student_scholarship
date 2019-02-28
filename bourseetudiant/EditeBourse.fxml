@@ -23,8 +23,8 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXTextField fx:id="anneUniv" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="185.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Anné universitaire" unFocusColor="#c91396" />
-      <JFXTextField fx:id="montant" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="255.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Montant" unFocusColor="#c91396" />
+      <JFXTextField fx:id="anneUniv" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="185.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Unversity year" unFocusColor="#c91396" />
+      <JFXTextField fx:id="montant" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="255.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Amount" unFocusColor="#c91396" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="405.0" layoutX="218.0" stroke="#dc99c7" strokeType="INSIDE" width="17.0" />
       <Pane layoutY="1.0" prefHeight="405.0" prefWidth="232.0" style="-fx-background-color: #BAC8D6;">
          <children>

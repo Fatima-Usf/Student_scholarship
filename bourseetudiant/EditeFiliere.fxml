@@ -23,8 +23,8 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXTextField fx:id="nomFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="177.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Nom Filiere" unFocusColor="#c91396" />
-      <JFXTextField fx:id="nbrAnne" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="272.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Nombre d'années" unFocusColor="#c91396" />
+      <JFXTextField fx:id="nomFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="177.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Filiere name" unFocusColor="#c91396" />
+      <JFXTextField fx:id="nbrAnne" focusColor="#bc0b9c" labelFloat="true" layoutX="276.0" layoutY="272.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Number of years" unFocusColor="#c91396" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="405.0" layoutX="218.0" stroke="#dc99c7" strokeType="INSIDE" width="17.0" />
       <Pane layoutY="1.0" prefHeight="405.0" prefWidth="232.0" style="-fx-background-color: #BAC8D6;">
          <children>

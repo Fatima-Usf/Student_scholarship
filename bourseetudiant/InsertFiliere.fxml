@@ -14,8 +14,8 @@
 <AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertFiliereController">
    <children>
       <JFXTextField fx:id="NumFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="163.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° Filiere" unFocusColor="#c91396" />
-      <JFXTextField fx:id="nomFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="226.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Nom Filiere" unFocusColor="#c91396" />
-      <JFXTextField fx:id="nbrAnne" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="285.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Nombre d'années" unFocusColor="#c91396" />
+      <JFXTextField fx:id="nomFiliere" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="226.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Filiere Name" unFocusColor="#c91396" />
+      <JFXTextField fx:id="nbrAnne" focusColor="#bc0b9c" labelFloat="true" layoutX="106.0" layoutY="285.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Number of years" unFocusColor="#c91396" />
       <ImageView fitHeight="486.0" fitWidth="439.0" layoutX="417.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@students.jpg" />

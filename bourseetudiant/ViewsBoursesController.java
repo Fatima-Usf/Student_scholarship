@@ -90,13 +90,7 @@ public class ViewsBoursesController implements Initializable {
     @FXML
     private void back(ActionEvent event) throws IOException {
             ((Node)event.getSource()).getScene().getWindow().hide();
-            Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
-            Scene scene = new Scene(root);
-        
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+          
     }
 
     @FXML
@@ -113,7 +107,7 @@ public class ViewsBoursesController implements Initializable {
         
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.show();
+            stage.showAndWait();
             refreshTable();
             
 
@@ -149,7 +143,7 @@ public class ViewsBoursesController implements Initializable {
         
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.show();
+            stage.showAndWait();
             refreshTable();
         
     }

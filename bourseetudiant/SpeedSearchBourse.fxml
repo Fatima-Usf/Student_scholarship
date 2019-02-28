@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="year" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.SpeedSearchBourseController">
    <children>
@@ -23,7 +24,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label layoutX="7.0" layoutY="29.0" prefHeight="32.0" prefWidth="236.0" text="Speed search of term and Amount" textFill="#8d0468" />
+      <Label layoutX="7.0" layoutY="29.0" prefHeight="32.0" prefWidth="236.0" text="Search by term and Amount" textFill="#8d0468">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
       <JFXTextField fx:id="y" focusColor="#bc0b9c" labelFloat="true" layoutX="48.0" layoutY="170.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Year univ" unFocusColor="#a10174" />
       <JFXButton fx:id="find11" buttonType="RAISED" layoutX="33.0" layoutY="256.0" onAction="#find" prefHeight="32.0" prefWidth="178.0" style="-fx-background-color: #F6BDEA;" text="Find by Year and Filiere" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>

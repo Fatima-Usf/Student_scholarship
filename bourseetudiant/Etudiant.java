@@ -22,6 +22,7 @@ public class Etudiant {
     private String dateNaissance;
     private int numFiliere; 
     private int montant;
+    private String nomFiliere;
 
 
 
@@ -38,6 +39,16 @@ public class Etudiant {
         this.dateNaissance = dateNaissance;
         this.numFiliere = numFiliere;
     }
+    
+     public Etudiant(int NumEtudiant, String nom, String prenom, int numCCP, String dateNaissance, int numFiliere, String nomFiliere) {
+        this.NumEtudiant = NumEtudiant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numCCP = numCCP;
+        this.dateNaissance = dateNaissance;
+        this.numFiliere = numFiliere;
+        this.nomFiliere= nomFiliere;
+    }
 
     public Etudiant(String nom, String prenom, int numCCP, String dateNaissance) {
         this.nom = nom;
@@ -52,6 +63,14 @@ public class Etudiant {
         this.numCCP = numCCP;
         this.dateNaissance = dateNaissance;
         this.montant= montant;
+    }
+
+    public String getNomFiliere() {
+        return nomFiliere;
+    }
+
+    public void setNomFiliere(String nomFiliere) {
+        this.nomFiliere = nomFiliere;
     }
 
    

@@ -22,11 +22,11 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dc99c7" height="413.0" layoutX="240.0" stroke="#dc99c7" strokeType="INSIDE" width="1.0" />
       <TableView fx:id="table" layoutX="241.0" prefHeight="413.0" prefWidth="538.0" tableMenuButtonVisible="true">
         <columns>
-          <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
-          <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom" />
+          <TableColumn fx:id="nom" prefWidth="75.0" text="FirstName" />
+          <TableColumn fx:id="prenom" prefWidth="75.0" text="LastName" />
             <TableColumn fx:id="NumCCP" prefWidth="75.0" text="N° CCP" />
-            <TableColumn fx:id="dateNaissance" prefWidth="75.0" text="date Naissance" />
-            <TableColumn fx:id="montant" prefWidth="75.0" text="Montant" />
+            <TableColumn fx:id="dateNaissance" prefWidth="75.0" text="Birth" />
+            <TableColumn fx:id="montant" prefWidth="75.0" text="Amount" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -38,7 +38,7 @@
          </font>
       </Label>
       <Line endX="100.0" layoutX="123.0" layoutY="201.0" opacity="0.54" startX="-100.0" stroke="#a10174" />
-      <JFXTextField fx:id="t" focusColor="#bc0b9c" labelFloat="true" layoutX="47.0" layoutY="223.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Terme" unFocusColor="#a10174" />
+      <JFXTextField fx:id="t" focusColor="#bc0b9c" labelFloat="true" layoutX="47.0" layoutY="223.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Term" unFocusColor="#a10174" />
       <JFXTextField fx:id="y" focusColor="#bc0b9c" labelFloat="true" layoutX="48.0" layoutY="267.0" maxWidth="224.0" minWidth="98.0" prefHeight="32.0" prefWidth="144.0" promptText="Year univ" unFocusColor="#a10174" />
       <JFXButton fx:id="find11" buttonType="RAISED" layoutX="33.0" layoutY="321.0" onAction="#getStudentByTerme" prefHeight="32.0" prefWidth="178.0" style="-fx-background-color: #F6BDEA;" text="Find by Year and Terme" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>

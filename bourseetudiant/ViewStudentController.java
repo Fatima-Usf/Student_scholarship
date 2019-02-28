@@ -15,9 +15,12 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.InvalidationListener;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,6 +34,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * FXML Controller class
@@ -61,21 +65,22 @@ public class ViewStudentController implements Initializable {
 
     @FXML
     private TableColumn<Etudiant, Integer> NumFiliere;
+    @FXML
+    private TableColumn<Etudiant, String> NomFiliere;
     
     public ObservableList<Etudiant> data = FXCollections.observableArrayList();
-    private InvalidationListener listener;
-
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try{
-        String sql= "SELECT * FROM `Etudiant` WHERE 1";
+        String sql= "select NumEtudiant, nom, prenom, NumCCP, dateNaissance, Etudiant.Numfiliere, nomFiliere from Etudiant, Filiere where Etudiant.Numfiliere=Filiere.NumFiliere";
         Connection con =DbEtudiant.getConnection();
         PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
         ResultSet result =stm.executeQuery();
         
         while(result.next()){
-        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6)));
+        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6), result.getString(7)));
         }
         con.close();
         
@@ -89,6 +94,7 @@ public class ViewStudentController implements Initializable {
         NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
         dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
         NumFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumFiliere"));
+        NomFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("nomFiliere"));
         
         table.setItems(data);
     }    
@@ -102,7 +108,8 @@ public class ViewStudentController implements Initializable {
         //    ComboBox comobox = new ComboBox();
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.show();
+            stage.showAndWait();
+            refreshTable();
             
       
 
@@ -152,7 +159,9 @@ public class ViewStudentController implements Initializable {
         
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.show();
+            stage.showAndWait();
+            refreshTable();
+   
            
             
 
@@ -163,13 +172,13 @@ public class ViewStudentController implements Initializable {
     data.clear();
 
         try{
-        String sql= "SELECT * FROM `Etudiant` WHERE 1";
+        String sql= "select NumEtudiant, nom, prenom, NumCCP, dateNaissance, Etudiant.Numfiliere, nomFiliere from Etudiant, Filiere where Etudiant.Numfiliere=Filiere.NumFiliere";
         Connection con =DbEtudiant.getConnection();
         PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
         ResultSet result =stm.executeQuery();
         
         while(result.next()){
-        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6)));
+        data.add(new Etudiant(result.getInt(1),result.getString(2),result.getString(3),result.getInt(4),result.getString(5),result.getInt(6), result.getString(7)));
         }
         con.close();
         
@@ -183,9 +192,10 @@ public class ViewStudentController implements Initializable {
         NumCCP.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumCCP"));
         dateNaissance.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("dateNaissance"));
         NumFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, Integer> ("NumFiliere"));
+        NomFiliere.setCellValueFactory(new PropertyValueFactory<Etudiant, String> ("nomFiliere"));
         
-        table.setItems(data);    
-    }
+        table.setItems(data);
+    } 
    
    
     
@@ -194,13 +204,7 @@ public class ViewStudentController implements Initializable {
     @FXML
     void back(ActionEvent event) throws IOException {
         ((Node)event.getSource()).getScene().getWindow().hide();
-        Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("win2.fxml"));
-            Scene scene = new Scene(root);
-        
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+      
     }
    
     

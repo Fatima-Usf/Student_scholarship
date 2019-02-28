@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -71,7 +72,7 @@ public class EditeController implements Initializable {
     
     
         @FXML
-    void UpdateStudent(ActionEvent event) throws IOException, Exception  {
+     void UpdateStudent(ActionEvent event) throws IOException, Exception  {
        // String myid= id.getText();
        // int idEtudiant =Integer.parseInt(myid);
         
