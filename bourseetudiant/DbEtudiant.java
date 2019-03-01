@@ -100,15 +100,16 @@ private static final String STUDENT = "CREATE TABLE `bourse`.`Etudiant` (\n" +
   public static int update(Etudiant etudiant) throws SQLException, Exception{
      int s=0;
       try{
-          String sql = "UPDATE `bourse`.`Etudiant` SET `nom`='?', `prenom`='?', `NumCCP`='?', `dateNaissance`='?', `Numfiliere`='?' WHERE `NumEtudiant`=?";
+          String sql = "UPDATE `bourse`.`Etudiant` SET `nom`=?, `prenom`=?, `NumCCP`=?, `dateNaissance`=?, `Numfiliere`=? WHERE `NumEtudiant`=?";
           Connection con = DbEtudiant.getConnection();
           PreparedStatement stm = (PreparedStatement)con.prepareStatement(sql);
-          stm.setString(1, etudiant.getNom());
+          
           stm.setString(1, etudiant.getNom());
           stm.setString(2, etudiant.getPrenom());
           stm.setInt(3, etudiant.getNumCCP());
           stm.setString(4, etudiant.getDateNaissance());
           stm.setInt(5, etudiant.getNumFiliere());
+          stm.setInt(6, etudiant.getNumEtudiant());
           s=stm.executeUpdate();
           
           con.close();
@@ -158,6 +159,9 @@ private static final String STUDENT = "CREATE TABLE `bourse`.`Etudiant` (\n" +
       e.printStackTrace();
       }return etudiant;
   }
+    
+    //select nom, prenom  from Etudiant, Filiere where Etudiant.Numfiliere = Filiere.NumFiliere   and nomFiliere ="AI";
+    
     
     public static List<Etudiant> getEtudiant() throws Exception{
     List<Etudiant> list = new ArrayList<Etudiant>();

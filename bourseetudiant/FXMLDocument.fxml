@@ -44,8 +44,8 @@
                   </Pane>
                   <Pane prefHeight="392.0" prefWidth="260.0" GridPane.columnIndex="1">
                      <children>
-                        <JFXTextField fx:id="user" focusColor="#cb91c0" labelFloat="true" layoutX="21.0" layoutY="119.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Username" unFocusColor="#dd1fa7" />
-                        <JFXTextField fx:id="pass" accessibleRole="PASSWORD_FIELD" focusColor="#cb91c0" labelFloat="true" layoutX="21.0" layoutY="196.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Password" unFocusColor="#dd1fa7" />
+                        <JFXTextField fx:id="user" focusColor="#bc0b9c" labelFloat="true" layoutX="21.0" layoutY="119.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Username" unFocusColor="#dd1fa7" />
+                        <JFXTextField fx:id="pass" accessibleRole="PASSWORD_FIELD" focusColor="#bc0b9c" labelFloat="true" layoutX="21.0" layoutY="196.0" maxWidth="215.0" minWidth="191.0" prefHeight="32.0" prefWidth="215.0" promptText="Password" unFocusColor="#dd1fa7" />
                         <JFXButton fx:id="submit" buttonType="RAISED" layoutX="88.0" layoutY="292.0" onAction="#login" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #F6BDEA;" text="Submit" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                            <cursor>
                               <Cursor fx:constant="MOVE" />

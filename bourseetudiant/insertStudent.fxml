@@ -1,33 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="779.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertStudentController">
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="778.0" style="-fx-background-color: #EDE4DC;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bourseetudiant.InsertStudentController">
    <children>
-      <JFXTextField fx:id="nom" focusColor="#cb91c0" labelFloat="true" layoutX="135.0" layoutY="53.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="352.0" promptText="Nom" unFocusColor="#c91396" />
-      <JFXTextField fx:id="prenom" focusColor="#cb91c0" labelFloat="true" layoutX="135.0" layoutY="113.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="Prenom" unFocusColor="#c91396" />
-      <JFXTextField fx:id="NumCCP" focusColor="#cb91c0" labelFloat="true" layoutX="135.0" layoutY="176.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° CCP" unFocusColor="#c91396" />
-      <JFXTextField fx:id="dateNaissaince" focusColor="#cb91c0" labelFloat="true" layoutX="135.0" layoutY="235.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date naissance " unFocusColor="#c91396" />
-      <JFXTextField fx:id="NumFiliere" focusColor="#cb91c0" labelFloat="true" layoutX="138.0" layoutY="301.0" maxWidth="217.0" minWidth="217.0" prefHeight="32.0" prefWidth="217.0" promptText="N° Filiere" unFocusColor="#c91396" />
-      <JFXButton fx:id="add" buttonType="RAISED" layoutX="490.0" layoutY="240.0" onAction="#insertStudent" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #F6BDEA;" text="Add a new student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-         <cursor>
-            <Cursor fx:constant="MOVE" />
-         </cursor>
-      </JFXButton>
-      <ImageView fitHeight="177.0" fitWidth="224.0" layoutX="486.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="nom" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="105.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="352.0" promptText="FirstName" unFocusColor="#c91396" />
+      <JFXTextField fx:id="prenom" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="166.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="LastName" unFocusColor="#c91396" />
+      <JFXTextField fx:id="NumCCP" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="226.0" maxWidth="224.0" minWidth="224.0" prefHeight="32.0" prefWidth="224.0" promptText="N° CCP" unFocusColor="#c91396" />
+      <JFXTextField fx:id="dateNaissaince" focusColor="#bc0b9c" labelFloat="true" layoutX="104.0" layoutY="287.0" maxWidth="224.0" minWidth="217.0" prefHeight="32.0" prefWidth="224.0" promptText="Date of birth " unFocusColor="#c91396" />
+      <ImageView fitHeight="486.0" fitWidth="439.0" layoutX="417.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Female-user-add-icon.png" />
+            <Image url="@students.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="view" buttonType="RAISED" layoutX="491.0" layoutY="302.0" onAction="#ViewStudent" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #F6BDEA;" text="Views student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <JFXButton fx:id="add" buttonType="RAISED" layoutX="533.0" layoutY="276.0" onAction="#insertStudent" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="+ Add a new student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <cursor>
             <Cursor fx:constant="MOVE" />
          </cursor>
       </JFXButton>
+      <JFXButton fx:id="view" buttonType="RAISED" layoutX="533.0" layoutY="331.0" onAction="#ViewStudent" prefHeight="41.0" prefWidth="208.0" style="-fx-background-color: #F6BDEA;" text="Views student" textFill="#a10174" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="283.0" layoutY="32.0" text="Student Adjunction" textFill="#8d0468">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="356.0" layoutY="61.0" opacity="0.49" startX="-100.0" stroke="#a10174" />
+      <JFXComboBox fx:id="Nfiliere" layoutX="108.0" layoutY="343.0" onAction="#getId" prefHeight="26.0" prefWidth="208.0" promptText="Filiere name">
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </JFXComboBox>
+      <Pane layoutX="548.0" layoutY="389.0" prefHeight="41.0" prefWidth="182.0" style="-fx-background-color: #EBE6E1;" />
    </children>
 </AnchorPane>
